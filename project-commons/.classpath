@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry sourcepath="/runtime-libraries/sources/other/apache/commons-beanutils-1.7.0-src.zip" path="/runtime-libraries/libs/other/apache/commons-beanutils.jar" kind="lib"/>
+	<classpathentry sourcepath="/runtime-libraries/sources/other/apache/commons-collections-3.2-src.zip" path="/runtime-libraries/libs/other/apache/commons-collections-3.2.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/apache/commons-digester.jar" kind="lib"/>
+	<classpathentry sourcepath="/runtime-libraries/sources/other/apache/commons-lang-2.2-src.zip" path="/runtime-libraries/libs/other/apache/commons-lang-2.2.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/testing/junit-3.8.1.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/cglib/asm.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/cglib/asm-attrs.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/cglib/cglib-2.1.3.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/jdom.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/apache/log4j-1.2.11.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/commons-jxpath-1.2.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/apache/commons-email-1.0.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/mail.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/activation.jar" kind="lib"/>
+	<classpathentry path="/runtime-libraries/libs/other/mail/sinetfactory.jar" kind="lib"/>
+	<classpathentry path="build/classes" kind="output"/>
+</classpath>

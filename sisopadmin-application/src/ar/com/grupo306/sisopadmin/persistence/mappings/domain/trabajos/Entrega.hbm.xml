@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="Entrega" table="ENTREGAS">
+		<id name="id" type="long" column="ID_ENTREGA">
+			<generator class="hilo" />
+		</id>
+		
+		<property name="domainCode" column="DOMAIN_CODE"/>
+		
+		<property name="fechaEntrega" column="FECHA_ENTREGA" />
+		
+		<property name="pathArchivo" type="string" column="PATH_ARCHIVO" />
+		
+		<property name="descargarDeCVS" column="DESCARGAR_DE_CVS" />
+		
+		<property name="observaciones" column="OBSERVACIONES" type="string" length="102400"/>
+		
+		<many-to-one
+			name="grupo"
+			column="USUARIO_GRUPO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Grupo"
+			fetch="join"/>
+		
+		<many-to-one 
+			name="fase"
+			column="ID_FASE"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Fase"
+			fetch="join"/>			
+	</class>
+
+</hibernate-mapping>

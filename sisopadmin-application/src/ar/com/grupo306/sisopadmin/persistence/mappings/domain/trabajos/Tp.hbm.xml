@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="Tp" table="TP">
+
+		<id name="id" type="long" column="ID_TP">
+			<generator class="hilo" />
+		</id>
+		<property name="nombre" type="string" column="NOMBRE" />
+		<property name="archivoEspecificacion" type="string" column="ARCHIVO_ESPECIFICACION"/>
+		<set name="fases" inverse="true" lazy="false" cascade="all">
+                <key column="ID_TP"/>
+    			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Fase"/>    
+		</set>		
+	</class>
+
+</hibernate-mapping>

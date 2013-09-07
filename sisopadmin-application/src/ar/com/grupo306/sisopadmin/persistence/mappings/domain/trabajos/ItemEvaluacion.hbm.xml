@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="ItemEvaluacion" table="ITEM_EVALUACION">
+		<id name="id" type="long" column="ID_ITEM_EVALUACION">
+			<generator class="hilo" />
+		</id>
+		
+		<property name="observaciones" column="OBSERVACIONES" type="string" length="102400"/>
+		
+		<property name="porcentajeCumplimiento" column="PORCENTAJE_CUMPLIMIENTO" />
+		
+		<many-to-one
+			name="estado"
+			column="ESTADO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.estados.Estado"
+			fetch="join"/>
+			
+		<many-to-one
+			name="itemPlantilla"
+			column="ID_ITEM_PLANTILLA"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.ItemPlantilla"
+			fetch="join"/>
+	</class>
+
+</hibernate-mapping>

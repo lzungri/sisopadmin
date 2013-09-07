@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.eventos">
+	
+	<class name="EventoNotificable" table="EVENTOS_NOTIFICABLES">
+		
+		<id name="id" type="long" column="EVENTO_ID">
+			<generator class="hilo"/>
+		</id>
+	
+		<property name="descripcion" type="string" column="DESCRIPCION" length="2048"/>
+		
+		<property name="url" type="string" column="URL"/>
+		
+		<property name="fechaDesde" column="FECHA_DESDE"/>
+		
+		<property name="fechaHasta" column="FECHA_HASTA"/>
+		
+		<set name="rolesNotificables" table="EVENTO_ROL" >
+			<key column="EVENTO_ID"/>
+			<many-to-many column="ROL_ID" class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Rol"/>
+		</set>
+		
+		<set name="usuariosNotificables" table="EVENTO_USUARIO" >
+			<key column="EVENTO_ID"/>
+			<many-to-many column="ID_USUARIO" class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Usuario"/>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>

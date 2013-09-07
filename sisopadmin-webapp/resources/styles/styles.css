@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    font-size: 11px;
+    width:100%;
+    text-align: center;
+	background-color: rgb(224, 245, 243);    
+}
+
+tbody {
+	vertical-align: middle;
+	text-align: justify;
+}
+
+span {
+    font-family: Verdana, sans-serif; 
+    font-size: 11px;
+    color: #000066;
+    font-weight: bold;
+}
+
+a:link, a:visited, a:active {
+    font-family: Verdana, sans-serif; 
+    font-size: 11px;
+    text-decoration: underline;
+    vertical-align: middle;
+    color: #000066;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(244, 104, 0);
+}
+
+div.p {
+    font-family: Verdana, sans-serif; 
+    font-size: 12px;
+    margin: 0;
+    padding: 10px;
+}
+
+div.small {
+    font-family: Verdana, sans-serif; 
+    font-size: 10px;
+}
+
+div.title {
+    color: #000066;
+    padding-left: 1px;
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 12px;
+    line-height: 9px;
+    height: 9px;
+    margin-bottom: 1px;
+}
+
+div.main {
+    border: 1px solid #000066;
+}
+
+.mainTable {
+    border: 1px solid #000066;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.mainHeader {
+	width:100%;
+}
+
+.mainLeft {
+	width: 13%;
+	vertical-align: top;
+	background-image: url(../../resources/images/main/barraLateralIzq.png);
+	background-repeat: repeat-y;
+}
+
+.mainLogin {
+}
+
+.mainBodyHeader {
+	width: 64%;
+}
+
+.mainRigth {
+	vertical-align: top;
+	width: 18%;
+	background-image: url(../../resources/images/main/barraLateralDer.png);
+	background-repeat: repeat-y;
+	background-position: right;
+}
+
+.mainBody {
+	#height: 100%;
+	width: 64%;
+}
+
+.headerForm{
+	vertical-align: middle;
+	text-align: left;
+}
+
+.FORM {
+	#background-color: rgb(169, 199, 214);
+	background-color: #E0F5F3;
+	vertical-align: middle;
+	text-align: center;
+	#width: 80%;
+	width: auto;
+	font-family: Verdana, sans-serif; 
+    font-size: 12px;
+    color: #000066;
+    font-weight: bold;
+}
+
+/*--- Estilos para Panels ---*/
+.panel {
+	#background-color: rgb(169, 199, 214);
+	background-color: #E0F5F3;
+	vertical-align: middle;
+	text-align: center;
+	#width: 80%;
+	width: auto;
+	font-family: Verdana, sans-serif; 
+    font-size: 12px;
+    color: #000066;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 15px;
+	background-image: url(../../resources/images/main/panel.png);
+	background-repeat: repeat-y;
+}
+
+.subPanel {
+	#background-color: rgb(169, 199, 214);
+	background-color: #E0F5F3;
+	vertical-align: middle;
+	text-align: center;
+	#width: 80%;
+	width: auto;
+	font-family: Verdana, sans-serif; 
+    font-size: 12px;
+    color: #000066;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+th.panel{
+    font-size: 16px;
+}
+
+th.subPanel{
+    font-size: 14px;
+}
+
+table.panel{
+	border:1px solid #236281;
+	padding:2px;
+}
+
+table.subPanel{
+	border:1px solid #236281;
+	padding:2px;
+}
+
+.panelSubmit{
+	background-color: lightSteelBlue;
+	vertical-align: middle;
+	text-align: center;
+	width: 80%;	
+}
+
+/*------------------------------------*/
+
+.column{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.imageColumn{
+	vertical-align: middle;
+	text-align: center;
+	width: auto;
+}
+
+.textColumn{
+	vertical-align: middle;
+	text-align: left;
+	width: auto;
+}
+
+.textColumnCentrado{
+	vertical-align: middle;
+	text-align: center;
+	width: auto;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------
+	Estilos del main body header.
+   -----------------------------------------------------------------------------------------------------------------------*/
+mainBodyHeaderInfo {
+	width: 100%;
+	align: center;
+}
+
+.mainBodyHeaderError {
+	width: 100%;
+	align: center;
+}
+ 

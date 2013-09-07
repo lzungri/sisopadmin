@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="EvaluacionFasePorPlantilla" table="EVALUACIONES_FASE_POR_PLANTILLA">
+		<id name="id" type="long" column="ID_EVALUACION_FASE">
+			<generator class="hilo" />
+		</id>
+		
+		<many-to-one
+			name="estado"
+			column="ESTADO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.estados.Estado"
+			fetch="join"/>
+			
+		<many-to-one
+			name="ayudanteEvaluador"
+			column="USUARIO_AYUDANTE_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Ayudante"
+			fetch="join"/>
+			
+		<many-to-one
+			name="grupo"
+			column="USUARIO_GRUPO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Grupo"
+			fetch="join"/>
+			
+		<many-to-one 
+			name="fase"
+			column="ID_FASE"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Fase"
+			fetch="join"/>
+			
+		<set name="itemsEvaluacion" lazy="false" cascade="all">
+			<key column="ID_EVALUACION_FASE"/>
+			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.ItemEvaluacion"/>    
+		</set>
+		
+		<many-to-one
+			name="plantilla"
+			column="ID_PLANTILLA_CORRECCION"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.PlantillaCorreccion"
+			fetch="join"/>
+			
+		<property name="plantillaAprobada" column="PLANTILLA_APROBADA"/>
+	</class>
+
+</hibernate-mapping>

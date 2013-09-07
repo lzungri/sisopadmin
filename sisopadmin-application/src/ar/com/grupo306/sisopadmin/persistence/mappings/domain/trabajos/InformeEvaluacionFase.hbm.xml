@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="InformeEvaluacionFase" table="INFORME_EVALUACION_FASE">
+		<id name="id" type="long" column="ID_INFORME_EVALUACION">
+			<generator class="hilo" />
+		</id>
+		
+		<property name="fechaAlta" column="FECHA_ALTA" />
+		
+		<property name="fechaEnvio" column="FECHA_ENVIO" />
+		
+		<property name="pathInforme" type="string" column="PATH_INFORME" />
+		
+		<property name="faseAprobada" column="FASE_APROBADA" />
+		
+		<property name="porcentajeEvaluado" column="PORCENTAJE_EVALUADO" />
+		
+		<property name="porcentajeCumplimientoFase" column="PORCENTAJE_CUMPLIMIENTO_FASE" />
+		
+		<many-to-one
+			name="estado"
+			column="ESTADO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.estados.Estado"
+			fetch="join"/>
+
+		<many-to-one
+			name="ayudanteEvaluador"
+			column="USUARIO_AYUDANTE_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Ayudante"
+			fetch="join"/>
+			
+		<many-to-one
+			name="grupoEvaluado"
+			column="USUARIO_GRUPO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Grupo"
+			fetch="join"/>
+			
+		<many-to-one 
+			name="fase"
+			column="ID_FASE"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Fase"
+			fetch="join"/>			
+
+		<many-to-one 
+			name="entregaEvaluada"
+			column="ID_ENTREGA"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Entrega"
+			fetch="join"/>			
+	</class>
+
+</hibernate-mapping>

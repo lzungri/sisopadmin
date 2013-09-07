@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.mensajes">
+
+	<class name="Mensaje" table="MENSAJES"
+		discriminator-value="generico">
+
+		<id name="id" type="long" column="ID_MENSAJE">
+			<generator class="hilo" />
+		</id>
+
+		<property name="titulo" type="string" column="TITULO"/>
+		<property name="fechaAlta" column="FECHA_ALTA" />
+		<property name="contenido" column="CONTENIDO" length="102400"/>
+		<property name="leidoPorReceptor" column="LEIDO_POR_RECEPTOR" />
+		
+		<many-to-one name="emisor"
+			lazy="false"
+            column="ID_USUARIO_EMISOR"
+            class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Usuario"/>
+            
+        <many-to-one name="receptor"
+        	lazy="false"
+            column="ID_USUARIO_RECEPTOR"
+            class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Usuario"/>
+            
+        <many-to-one name="mensajePadre"
+	        lazy="false"
+            column="ID_MENSAJE_PADRE"
+            class="ar.com.grupo306.sisopadmin.domain.modelo.impl.mensajes.Mensaje"
+            unique="true"/>
+            
+		<one-to-one name="mensajeHijo"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.mensajes.Mensaje"
+			property-ref="mensajePadre"/>
+		
+	</class>
+
+</hibernate-mapping>

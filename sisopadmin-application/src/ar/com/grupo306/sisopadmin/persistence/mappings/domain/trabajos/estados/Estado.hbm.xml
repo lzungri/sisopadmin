@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping 
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.estados">
+	
+	<class name="Estado" table="ESTADOS">
+		
+		<id name="id" type="long" column="ESTADO_ID">
+			<generator class="hilo"/>
+		</id>
+	
+		<property name="domainCode" type="string" column="DOMAIN_CODE" unique="true"/>
+		
+		<property name="descripcion" type="string" column="DESCRIPCION"/>
+		
+		<property name="className" type="string" column="CLASS_NAME"/>
+		
+	</class>
+
+</hibernate-mapping>

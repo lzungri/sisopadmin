@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<!-- Módulo de configuración de struts. -->
+<struts-config>
+
+	<!-- Definición de forms. -->
+	<form-beans>
+		<form-bean name="useCaseForm" type="ar.com.grupo306.usecasefwk.struts.forms.UseCaseForm"/>
+	</form-beans>
+
+	<!-- Forwards que pueden ser referenciados independientemente del action. -->
+	<global-forwards>
+		<forward name="closeApplication" path="/homeUseCase.do?reqCode=initUseCase"/>		
+	</global-forwards>
+
+	<message-resources null="true"	parameter="org.apache.struts.webapp.dispatch.MessageResources" />	
+
+	<!--
+		Plugin propio de la app Sisop Admin, se utiliza para registrar los UseCases.
+	-->
+	<plug-in className="ar.com.grupo306.sisopadmin.web.usecases.register.SisopAdminUseCaseRegister"/>
+	<plug-in className="ar.com.grupo306.sisopadmin.web.usecases.register.EnvironmentConfigurator"/>
+	<!--
+		Plugin de Tiles.
+	-->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>
