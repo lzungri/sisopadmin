@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="ItemEvaluacion" table="ITEM_EVALUACION">
+
+		<id name="id" type="long" column="ID_ITEM_EVALUACION">
+			<generator class="hilo" />
+		</id>
+		<property name="obsGenerales" type="string" column="OBSERVACIONES_GRALES" />
+		<property name="obsParticulares" column="OBSERVACIONES_PARTICULARES" />
+		<property name="porcentaje" column="PORCENTAJE" />
+  		<property name="puntaje" column="PUNTAJE" />
+		
+		
+	</class>
+
+</hibernate-mapping>

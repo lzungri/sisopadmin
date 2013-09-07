@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--Rafa-->
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas">
+	<class name="PlantillaEncuestada" table="PLANTILLA_ENCUESTADA">
+
+		<id name="id" type="long" column="PLANTILLA_ENCUESTADA_ID">
+			<generator class="hilo" />
+		</id>
+		
+		<property name="fechaFin"  column="FECHA_FIN" />
+		<property name="fechaAlta" column="FECHA_ALTA" />
+		<property name="nombre" column="NOMBRE" unique="true"/>
+		<property name="estado" column="ESTADO" />
+           
+		
+		<list name="puntosEncuestados" cascade="all" >
+		    
+			<key column="PLANTILLA_ENCUESTADA" foreign-key="PLANTILLA_ENCUESTADA_ID" update="true"/>
+			<index column="PUNTO_ENCUESTADO_ID"/>
+			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas.PuntoEncuestado"/>
+		</list>
+		
+
+		
+		
+	</class>
+
+</hibernate-mapping>

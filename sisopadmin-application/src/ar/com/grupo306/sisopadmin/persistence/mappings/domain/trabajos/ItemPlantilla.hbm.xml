@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--Rafa-->
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+	<class name="ItemPlantilla" table="ITEMS_PLANTILLA">
+
+		<id name="id" type="long" column="ID_ITEM_PLANTILLA">
+			<generator class="hilo" />
+		</id>
+
+		<property name="numeroConsigna" column="NUMERO_CONSIGNA" />
+		<property name="obligatorio" column="OBLIGATORIO" />
+		<property name="observacionBajaCalificacion" column="OBSERVACION_BAJA_CALIFICACION" />
+		<property name="peso" column="PESO" />
+		<property name="procedimiento" column="PROCEDIMIENTO" />
+		<property name="resultadoEsperado" column="RESULTADO_ESPERADO" />
+		
+ 
+	</class>
+
+</hibernate-mapping>

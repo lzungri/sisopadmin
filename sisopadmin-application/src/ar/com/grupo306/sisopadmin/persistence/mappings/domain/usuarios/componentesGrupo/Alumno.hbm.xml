@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.componentesGrupo">
+
+	<class name="Alumno" table="ALUMNOS">
+
+		<id name="id" type="long" column="ID_ALUMNO">
+			<generator class="hilo" />
+		</id>
+		<property name="apellido" type="string" column="APELLIDO" />
+		<property name="legajo" column="LEGAJO" />
+		<property name="email" column="E_MAIL" />
+  		<property name="nombre" column="NOMBRE" />
+  		<many-to-one name="grupo"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Grupo"
+			column="ID_GRUPO"
+		/>
+	</class>
+
+</hibernate-mapping>

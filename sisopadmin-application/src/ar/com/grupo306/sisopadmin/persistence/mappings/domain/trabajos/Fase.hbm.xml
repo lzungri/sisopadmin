@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--Rafa-->
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+	<class name="Fase" table="FASE">
+
+		<id name="id" type="long" column="ID_FASE">
+			<generator class="hilo" />
+		</id>
+
+		<property name="entregaObligatoria" column="ENTREGA_OBLIGATORIA" />
+		<property name="fechaFin" column="FECHA_FIN" />
+		<property name="fechaInicio" column="FECHA_INICIO" />
+		<property name="nombre" column="NOMBRE" />
+		<property name="numero" column="NUMERO" />
+		<set name="plantillasCorreccion" inverse="true" lazy="false" cascade="all">
+                <key column="ID_FASE"/>
+    			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.PlantillaCorreccion"/>    
+		</set>
+		<set name="consignas" inverse="true" lazy="false" cascade="all">
+                <key column="ID_CONSIGNA"/>
+    			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.Consigna"/>    
+	    </set>
+ 
+	</class>
+
+</hibernate-mapping>

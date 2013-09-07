@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--Rafa-->
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas">
+    <class name="PuntoAEncuestar"  table="PUNTO_A_ENCUESTAR">
+    <id name="id" column="PUNTO_A_ENCUESTAR_ID">
+      <generator class="hilo" ></generator>
+    </id>
+    <!--property name="usuario" column="IDUsuario"></property-->
+	<property name="descripcion" column="DESCRIPCION"></property>
+	<property name="nombre" column="NOMBRE"></property>
+	<property name="numero" column="NUMERO"></property>
+	<property name="peso" column="PESO"></property>
+	
+	
+	<many-to-one name="plantillaEncuesta"
+		class="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas.PlantillaEncuesta"
+		column="PLANTILLA_ENCUESTA_ID"
+		/>
+	
+
+
+	
+  </class>
+</hibernate-mapping>

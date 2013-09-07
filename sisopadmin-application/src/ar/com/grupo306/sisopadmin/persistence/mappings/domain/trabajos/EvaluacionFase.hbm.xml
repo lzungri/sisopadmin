@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos">
+
+	<class name="EvaluacionFase" table="EVALUACION_FASE">
+
+		<id name="id" type="long" column="ID_EVALUACION_FASE">
+			<generator class="hilo" />
+		</id>
+		<many-to-one name="corrector"
+			column="USUARIO_AYUDANTE_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Ayudante"
+			/>
+		<many-to-one name="grupo"
+			column="USUARIO_GRUPO_ID"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Grupo"
+			/>
+		<set name="itemsCorregidos" inverse="true" lazy="false" cascade="all">
+                <key column="ID_EVALUACION_FASE"/>
+    			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.trabajos.ItemEvaluacion"/>    
+		</set>
+	</class>
+
+</hibernate-mapping>

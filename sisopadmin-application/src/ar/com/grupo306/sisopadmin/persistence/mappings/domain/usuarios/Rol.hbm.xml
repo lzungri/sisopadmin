@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping 
+	package="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios">
+	
+	<class name="Rol" table="ROLES">
+		
+		<id name="id" type="long" column="ROL_ID"	>
+			<generator class="hilo"/>
+		</id>
+	
+		<property name="domainCode" type="string" column="DOMAIN_KEY"/>
+		
+		<property name="nombre" type="string" column="NOMBRE"/>
+		
+		<property name="descripcion" type="string" column="DESCRIPCION"/>
+		
+		<set name="permisos" inverse="true" cascade="all" table="ROL_PERMISO">
+			<key column="ROL_ID"/>
+			<many-to-many column="PERMISO_ID" class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Permiso"/>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>

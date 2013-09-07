@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas">
+	<class name="PlantillaEncuesta" table="PLANTILLA_ENCUESTA">
+
+		<id name="id" column="PLANTILLA_ENCUESTA_ID">
+			<generator class="hilo" />
+		</id>
+
+		
+		<property name="fechaFin"  column="FECHA_FIN" />
+		<property name="fechaAlta" column="FECHA_ALTA" />
+		<property name="nombre" column="NOMBRE" unique="true"/>
+		<property name="estado" column="ESTADO" />
+		
+		<!--one-to-one
+			cascade="all"
+			name="usuario" 
+			column="USUARIO_CREADOR" 
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Usuario" 
+			foreign-key="ID_USUARIO"
+		/-->
+		
+		<list name="puntosAEncuestar" inverse="true" cascade="all" >
+			<key column="PLANTILLA_ENCUESTA_ID" foreign-key="PLANTILLA_ENCUESTA_ID"/>
+			<index column="PUNTO_A_ENCUESTAR_ID"/>
+			<one-to-many class="ar.com.grupo306.sisopadmin.domain.modelo.impl.encuestas.PuntoAEncuestar"/>
+		</list>
+		
+		
+		<set name="usuariosSinEncuestar" inverse="true" table="USUARIO_PANTILLA">
+			<key column="PLANTILLA_ENCUESTA_ID"/>
+			<many-to-many column="ID_USUARIO"
+			class="ar.com.grupo306.sisopadmin.domain.modelo.impl.usuarios.Usuario"/>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>
