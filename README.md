@@ -1,4 +1,4 @@
 sisopadmin
 ==========
 
-Web application for integral management of the Operating Systems course at National Technological University (Buenos Aires, Argentina)
+Web application for the management of the Operating Systems course at National Technological University (Buenos Aires, Argentina)
