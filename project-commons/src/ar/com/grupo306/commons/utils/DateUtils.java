@@ -10,8 +10,6 @@ import java.util.Locale;
 
 /**
  * Utilidades para manejo de fechas.
- *
- * @author afanadaDelCredi
  */
 public class DateUtils extends org.apache.commons.lang.time.DateUtils {
 

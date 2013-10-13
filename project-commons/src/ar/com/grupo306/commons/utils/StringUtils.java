@@ -6,9 +6,6 @@ import java.util.Iterator;
 
 import org.apache.commons.collections.Transformer;
 
-/**
- * @author afanadaDelCredicoop
- */
 public class StringUtils extends org.apache.commons.lang.StringUtils
 {
 
